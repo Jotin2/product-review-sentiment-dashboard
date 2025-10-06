@@ -1,0 +1,53 @@
+---
+alwaysApply: true
+---
+
+Frontend (React + Tailwind)
+
+Use functional components only.
+
+Use Tailwind CSS exclusively for styling; no additional CSS files unless explicitly requested.
+
+Keep components modular and reusable.
+
+Organize files in the following folders:
+
+components/ → UI elements
+
+pages/ → main views/screens
+
+services/ → API calls (Axios)
+
+context/ → React Context for global state
+
+hooks/ → custom hooks
+
+Components must have placeholder text when actual logic is not implemented.
+
+Layout should be responsive by default using Tailwind classes.
+
+Backend (Node.js + Express + MongoDB)
+
+Follow the MERN stack architecture.
+
+Use RESTful API conventions.
+
+Separate files for models/, routes/, controllers/.
+
+Middleware should be modular and reusable.
+
+Placeholder endpoints should return simple JSON responses when logic isn’t implemented.
+
+General Project Rules
+
+Always respect the existing folder structure and naming conventions.
+
+Avoid breaking existing functionality when adding new code.
+
+When creating new features, keep them consistent with previous patterns.
+
+Do not hardcode environment variables; always use .env files.
+
+Document placeholder behavior clearly in code comments.
+
+For new tasks, ask if the implementation should be placeholder or real logic.

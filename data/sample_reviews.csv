@@ -1,0 +1,41 @@
+review_id,product_id,product_name,rating,review_text,date
+1,PROD001,Wireless Bluetooth Headphones,5,"These headphones are absolutely amazing! The sound quality is crystal clear and the battery life lasts all day. Perfect for my daily commute.",2024-01-15
+2,PROD001,Wireless Bluetooth Headphones,4,"Great headphones overall. Sound is good and they're comfortable to wear. Only minor issue is the charging case is a bit bulky.",2024-01-16
+3,PROD002,Smart Fitness Tracker,3,"The fitness tracker works okay but the app is confusing to use. Battery life is decent but not as advertised. Average product.",2024-01-17
+4,PROD002,Smart Fitness Tracker,2,"Disappointed with this purchase. The heart rate monitor is inaccurate and the band keeps falling off during workouts. Not worth the money.",2024-01-18
+5,PROD003,Portable Phone Charger,5,"This charger is a lifesaver! Charges my phone super fast and the build quality feels premium. Highly recommend!",2024-01-19
+6,PROD001,Wireless Bluetooth Headphones,1,"Terrible product! The headphones stopped working after just one week. Customer service was unhelpful. Waste of money.",2024-01-20
+7,PROD004,Ergonomic Office Chair,4,"Very comfortable chair for long work sessions. Assembly was easy and the materials feel high quality. Minor complaint about the armrests.",2024-01-21
+8,PROD003,Portable Phone Charger,3,"Decent charger but nothing special. Takes longer to charge than expected. Price is reasonable for what you get.",2024-01-22
+9,PROD005,LED Desk Lamp,5,"Love this lamp! The adjustable brightness and color temperature are perfect for my workspace. Very well designed.",2024-01-23
+10,PROD002,Smart Fitness Tracker,4,"Good fitness tracker with accurate step counting. The sleep tracking feature is helpful. App could be more intuitive though.",2024-01-24
+11,PROD006,Bluetooth Speaker,2,"Sound quality is poor and the battery drains quickly. The design looks cheap. Would not recommend this speaker.",2024-01-25
+12,PROD004,Ergonomic Office Chair,5,"Best office chair I've ever owned! My back pain has significantly improved since using this chair. Worth every penny.",2024-01-26
+13,PROD007,Wireless Mouse,3,"Standard wireless mouse. Works fine but nothing exceptional. The scroll wheel could be smoother. Average quality.",2024-01-27
+14,PROD005,LED Desk Lamp,4,"Great lamp with good build quality. The touch controls are responsive and the light output is excellent. Minor issue with the base.",2024-01-28
+15,PROD008,Mechanical Keyboard,5,"Outstanding keyboard! The typing experience is fantastic and the RGB lighting looks amazing. Perfect for gaming and work.",2024-01-29
+16,PROD006,Bluetooth Speaker,1,"Complete waste of money. The speaker crackles at high volume and the Bluetooth connection drops constantly. Avoid this product.",2024-01-30
+17,PROD009,USB-C Hub,4,"Very useful hub with multiple ports. Works well with my laptop. The build quality is solid and the price is fair.",2024-02-01
+18,PROD007,Wireless Mouse,2,"Mouse works but the battery life is terrible. Have to charge it every few days. The ergonomics could be better too.",2024-02-02
+19,PROD010,Standing Desk Converter,5,"This standing desk converter has transformed my work setup! Easy to adjust and very stable. Highly recommend for home offices.",2024-02-03
+20,PROD008,Mechanical Keyboard,3,"Good keyboard but the keys are a bit loud for office use. The build quality is decent but not exceptional. Average product.",2024-02-04
+21,PROD011,Webcam,4,"Great webcam for video calls. The image quality is clear and the autofocus works well. The privacy shutter is a nice touch.",2024-02-05
+22,PROD009,USB-C Hub,2,"Hub works but gets very hot during use. Some ports don't work reliably. The cable is also quite short.",2024-02-06
+23,PROD012,Monitor Stand,5,"Excellent monitor stand! Very sturdy and adjustable. The cable management features are thoughtful. Great value for money.",2024-02-07
+24,PROD010,Standing Desk Converter,4,"Good standing desk converter. Easy to assemble and use. The height adjustment is smooth. Only minor issue with the surface area.",2024-02-08
+25,PROD013,Wireless Charging Pad,3,"Charging pad works but is slower than expected. The LED indicator is too bright. Decent product for the price.",2024-02-09
+26,PROD011,Webcam,1,"Poor webcam quality. The image is grainy and the microphone picks up too much background noise. Not suitable for professional use.",2024-02-10
+27,PROD014,Desk Organizer,5,"Perfect desk organizer! Keeps everything tidy and the compartments are well-sized. The bamboo material looks great.",2024-02-11
+28,PROD012,Monitor Stand,3,"Decent monitor stand but the assembly instructions were unclear. The build quality is okay but not premium. Average product.",2024-02-12
+29,PROD015,Blue Light Glasses,4,"These glasses help reduce eye strain during long computer sessions. The frames are comfortable and the lenses are clear.",2024-02-13
+30,PROD013,Wireless Charging Pad,2,"Charging pad overheats my phone and charges very slowly. The design is also not very stable. Would not recommend.",2024-02-14
+31,PROD016,Phone Stand,5,"Simple but effective phone stand. Holds my phone securely at multiple angles. Great for video calls and watching content.",2024-02-15
+32,PROD014,Desk Organizer,4,"Good desk organizer with plenty of storage space. The quality is solid and it looks professional. Minor issue with the drawer mechanism.",2024-02-16
+33,PROD017,Screen Protector,3,"Screen protector works but was difficult to apply without bubbles. The clarity is good but the edges don't stick well.",2024-02-17
+34,PROD015,Blue Light Glasses,5,"These glasses have made a huge difference in my eye comfort. The blue light filtering is effective and the style is modern.",2024-02-18
+35,PROD018,Cable Management Kit,4,"Great cable management solution. The clips and ties work well to keep cables organized. Good value for the price.",2024-02-19
+36,PROD016,Phone Stand,2,"Phone stand is flimsy and doesn't hold the phone securely. The angle adjustment is limited. Not worth the purchase.",2024-02-20
+37,PROD019,Desk Mat,5,"Excellent desk mat! The surface is smooth for writing and the size is perfect. The rubber backing keeps it in place.",2024-02-21
+38,PROD017,Screen Protector,1,"Terrible screen protector. Full of bubbles and scratches easily. The installation was a nightmare. Complete waste of money.",2024-02-22
+39,PROD020,Monitor Light Bar,4,"Great addition to my setup! The light is even and reduces eye strain. The touch controls are intuitive and responsive.",2024-02-23
+40,PROD018,Cable Management Kit,3,"Cable management kit works okay but some of the clips are too small. The instructions could be clearer. Average quality.",2024-02-24
