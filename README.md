@@ -1,8 +1,6 @@
-# product-review-sentiment-dashboard
+# Product Review Sentiment Dashboard
 
 Web app that visualizes customer sentiment from product reviews using NLP
-
-# Product Review Sentiment Dashboard
 
 ## Development setup
 

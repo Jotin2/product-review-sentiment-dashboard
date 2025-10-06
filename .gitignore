@@ -137,3 +137,24 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+
+# Local frontend and backend node_modules (if not already ignored)
+frontend/node_modules/
+backend/node_modules/
+
+# Frontend build output
+frontend/build/
+
+# Backend logs (optional, already covered but explicit)
+backend/logs/
+
+# Local environment files
+frontend/.env
+backend/.env
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
