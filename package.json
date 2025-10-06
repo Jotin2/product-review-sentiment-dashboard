@@ -1,0 +1,25 @@
+{
+    "name": "product-review-sentiment-dashboard",
+    "version": "1.0.0",
+    "description": "Web app that visualizes customer sentiment from product reviews using NLP",
+    "main": "index.js",
+    "scripts": {
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd backend && npm run dev",
+        "client": "cd frontend && npm start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Jotin2/product-review-sentiment-dashboard.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Jotin2/product-review-sentiment-dashboard/issues"
+    },
+    "homepage": "https://github.com/Jotin2/product-review-sentiment-dashboard#readme",
+    "devDependencies": {
+        "concurrently": "^9.2.1"
+    }
+}
