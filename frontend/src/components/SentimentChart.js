@@ -77,10 +77,17 @@ const SentimentChart = ({ data }) => {
                                 formatter={(value, name) => [value, "Count"]}
                                 labelFormatter={(label) => `${label} Sentiment`}
                                 contentStyle={{
-                                    backgroundColor: "white",
-                                    border: "1px solid #e5e7eb",
+                                    backgroundColor: "#1F2937",
+                                    border: "1px solid #374151",
                                     borderRadius: "8px",
-                                    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+                                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.3)",
+                                    color: "#FFFFFF",
+                                }}
+                                labelStyle={{
+                                    color: "#FFFFFF",
+                                }}
+                                itemStyle={{
+                                    color: "#FFFFFF",
                                 }}
                             />
                             <Bar dataKey="value" radius={[4, 4, 0, 0]}>

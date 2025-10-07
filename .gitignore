@@ -161,3 +161,10 @@ Thumbs.db
 
 # Cursor IDE files
 .cursor/
+
+# CSV data files
+*.csv
+data/*.csv
+
+# Uploaded files
+uploads/

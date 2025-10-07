@@ -46,28 +46,6 @@ const KeywordAnalysis = ({ keywords }) => {
 
     const chartData = createMultiSentimentData();
 
-    const CustomTooltip = ({ active, payload, label }) => {
-        if (active && payload && payload.length) {
-            return (
-                <div className="bg-white p-3 border border-gray-200 rounded-lg shadow-lg">
-                    <p className="font-medium text-gray-900 mb-2">Keyword: {label}</p>
-                    {payload.map((entry, index) => (
-                        <div key={index} className="flex items-center space-x-2">
-                            <div
-                                className="w-3 h-3 rounded-full"
-                                style={{ backgroundColor: entry.color }}
-                            ></div>
-                            <span className="text-sm">
-                                {entry.name}: {entry.value}
-                            </span>
-                        </div>
-                    ))}
-                </div>
-            );
-        }
-        return null;
-    };
-
     return (
         <div className="space-y-6">
             {/* Multi-Sentiment Keywords Chart */}
@@ -95,7 +73,21 @@ const KeywordAnalysis = ({ keywords }) => {
                                 fontSize={12}
                                 tick={{ fontSize: 12 }}
                             />
-                            <Tooltip content={<CustomTooltip />} />
+                            <Tooltip
+                                contentStyle={{
+                                    backgroundColor: "#1F2937",
+                                    border: "1px solid #374151",
+                                    borderRadius: "8px",
+                                    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.3)",
+                                    color: "#FFFFFF",
+                                }}
+                                labelStyle={{
+                                    color: "#FFFFFF",
+                                }}
+                                itemStyle={{
+                                    color: "#FFFFFF",
+                                }}
+                            />
                             <Legend />
                             <Bar
                                 dataKey="positive"

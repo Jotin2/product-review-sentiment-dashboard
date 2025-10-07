@@ -4,6 +4,10 @@ import SentimentChart from "./SentimentChart";
 import ReviewTable from "./ReviewTable";
 import KeywordAnalysis from "./KeywordAnalysis";
 import PieChart from "./PieChart";
+import TemporalTrends from "./TemporalTrends";
+import SentimentComposition from "./SentimentComposition";
+import TrendDetection from "./TrendDetection";
+import SentimentSummaryKPIs from "./SentimentSummaryKPIs";
 import RawDataDisplay from "./RawDataDisplay";
 
 const Dashboard = () => {
@@ -99,54 +103,8 @@ const Dashboard = () => {
                 ) : (
                     /* Analysis Results */
                     <div className="space-y-8">
-                        {/* Summary Cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div className="bg-white rounded-lg shadow-sm border p-6">
-                                <div className="flex items-center">
-                                    <div>
-                                        <p className="text-sm font-medium text-gray-500">
-                                            Total Reviews
-                                        </p>
-                                        <p className="text-2xl font-semibold text-gray-900">
-                                            {analysisData.data.summary.total_reviews}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="bg-white rounded-lg shadow-sm border p-6">
-                                <div className="flex items-center">
-                                    <div>
-                                        <p className="text-sm font-medium text-gray-500">
-                                            Positive Sentiment
-                                        </p>
-                                        <p className="text-2xl font-semibold text-gray-900">
-                                            {
-                                                analysisData.data.summary.sentiment_distribution
-                                                    .positive.percentage
-                                            }
-                                            %
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="bg-white rounded-lg shadow-sm border p-6">
-                                <div className="flex items-center">
-                                    <div className="flex-shrink-0">
-                                        <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center"></div>
-                                    </div>
-                                    <div className="ml-4">
-                                        <p className="text-sm font-medium text-gray-500">
-                                            Average Score
-                                        </p>
-                                        <p className="text-2xl font-semibold text-gray-900">
-                                            {analysisData.data.summary.average_score}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {/* Sentiment Summary KPIs */}
+                        <SentimentSummaryKPIs data={analysisData.data} />
 
                         {/* Sentiment Chart */}
                         <div className="bg-white rounded-lg shadow-sm border p-6">
@@ -156,6 +114,24 @@ const Dashboard = () => {
                             <SentimentChart
                                 data={analysisData.data.summary.sentiment_distribution}
                             />
+                        </div>
+
+                        {/* Temporal Trends */}
+                        <div className="bg-white rounded-lg shadow-sm border p-6">
+                            <TemporalTrends
+                                reviews={analysisData.data.reviews}
+                                sentiment={analysisData.data.summary.sentiment_distribution}
+                            />
+                        </div>
+
+                        {/* Sentiment Composition by Product */}
+                        <div className="bg-white rounded-lg shadow-sm border p-6">
+                            <SentimentComposition data={analysisData.data} />
+                        </div>
+
+                        {/* Trend Detection */}
+                        <div className="bg-white rounded-lg shadow-sm border p-6">
+                            <TrendDetection data={analysisData.data} />
                         </div>
 
                         {/* Keyword Analysis */}

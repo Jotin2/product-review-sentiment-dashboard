@@ -4,6 +4,8 @@ const ReviewTable = ({ reviews }) => {
     const [sortField, setSortField] = useState("score");
     const [sortDirection, setSortDirection] = useState("desc");
     const [filterSentiment, setFilterSentiment] = useState("all");
+    const [currentPage, setCurrentPage] = useState(1);
+    const reviewsPerPage = 50;
 
     const getSentimentColor = (label) => {
         switch (label) {
@@ -50,7 +52,104 @@ const ReviewTable = ({ reviews }) => {
                 return aVal < bVal ? 1 : -1;
             }
         });
-    // Show all reviews (no limit)
+
+    // Pagination calculations
+    const totalPages = Math.ceil(filteredAndSortedReviews.length / reviewsPerPage);
+    const startIndex = (currentPage - 1) * reviewsPerPage;
+    const endIndex = startIndex + reviewsPerPage;
+    const paginatedReviews = filteredAndSortedReviews.slice(startIndex, endIndex);
+
+    // Reset to page 1 when filter changes
+    const handleFilterChange = (sentiment) => {
+        setFilterSentiment(sentiment);
+        setCurrentPage(1);
+    };
+
+    // Pagination component (reusable for top and bottom)
+    const PaginationControls = () => (
+        <div className="flex items-center justify-between border-t border-b py-3">
+            <div className="text-sm text-gray-600">
+                Page {currentPage} of {totalPages} • Showing {startIndex + 1}-
+                {Math.min(endIndex, filteredAndSortedReviews.length)} of{" "}
+                {filteredAndSortedReviews.length} reviews
+            </div>
+            <div className="flex items-center space-x-2">
+                <button
+                    onClick={() => setCurrentPage(1)}
+                    disabled={currentPage === 1}
+                    className={`px-3 py-1 text-sm border rounded ${
+                        currentPage === 1
+                            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                            : "bg-white text-gray-700 hover:bg-gray-50"
+                    }`}
+                >
+                    First
+                </button>
+                <button
+                    onClick={() => setCurrentPage(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className={`px-3 py-1 text-sm border rounded ${
+                        currentPage === 1
+                            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                            : "bg-white text-gray-700 hover:bg-gray-50"
+                    }`}
+                >
+                    Previous
+                </button>
+
+                {/* Page numbers */}
+                {[...Array(Math.min(5, totalPages))].map((_, i) => {
+                    let pageNum;
+                    if (totalPages <= 5) {
+                        pageNum = i + 1;
+                    } else if (currentPage <= 3) {
+                        pageNum = i + 1;
+                    } else if (currentPage >= totalPages - 2) {
+                        pageNum = totalPages - 4 + i;
+                    } else {
+                        pageNum = currentPage - 2 + i;
+                    }
+
+                    return (
+                        <button
+                            key={i}
+                            onClick={() => setCurrentPage(pageNum)}
+                            className={`px-3 py-1 text-sm border rounded ${
+                                currentPage === pageNum
+                                    ? "bg-blue-500 text-white"
+                                    : "bg-white text-gray-700 hover:bg-gray-50"
+                            }`}
+                        >
+                            {pageNum}
+                        </button>
+                    );
+                })}
+
+                <button
+                    onClick={() => setCurrentPage(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className={`px-3 py-1 text-sm border rounded ${
+                        currentPage === totalPages
+                            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                            : "bg-white text-gray-700 hover:bg-gray-50"
+                    }`}
+                >
+                    Next
+                </button>
+                <button
+                    onClick={() => setCurrentPage(totalPages)}
+                    disabled={currentPage === totalPages}
+                    className={`px-3 py-1 text-sm border rounded ${
+                        currentPage === totalPages
+                            ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                            : "bg-white text-gray-700 hover:bg-gray-50"
+                    }`}
+                >
+                    Last
+                </button>
+            </div>
+        </div>
+    );
 
     return (
         <div className="space-y-4">
@@ -62,7 +161,7 @@ const ReviewTable = ({ reviews }) => {
                     </label>
                     <select
                         value={filterSentiment}
-                        onChange={(e) => setFilterSentiment(e.target.value)}
+                        onChange={(e) => handleFilterChange(e.target.value)}
                         className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                         <option value="all">All Sentiments</option>
@@ -71,11 +170,10 @@ const ReviewTable = ({ reviews }) => {
                         <option value="neutral">Neutral</option>
                     </select>
                 </div>
-
-                <div className="text-sm text-gray-500">
-                    Showing {filteredAndSortedReviews.length} of {reviews.length} reviews
-                </div>
             </div>
+
+            {/* Top Pagination */}
+            {totalPages > 1 && <PaginationControls />}
 
             {/* Table */}
             <div className="overflow-x-auto">
@@ -115,7 +213,7 @@ const ReviewTable = ({ reviews }) => {
                         </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                        {filteredAndSortedReviews.map((review) => (
+                        {paginatedReviews.map((review) => (
                             <tr key={review.id} className="hover:bg-gray-50">
                                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                     {review.id}
@@ -160,6 +258,9 @@ const ReviewTable = ({ reviews }) => {
                     No reviews found for the selected filter.
                 </div>
             )}
+
+            {/* Bottom Pagination */}
+            {totalPages > 1 && <PaginationControls />}
         </div>
     );
 };
