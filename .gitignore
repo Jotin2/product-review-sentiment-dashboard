@@ -158,3 +158,6 @@ backend/.env
 
 # Windows system files
 Thumbs.db
+
+# Cursor IDE files
+.cursor/
