@@ -21,10 +21,10 @@ app.get("/", (req, res) => {
 
 // Error handling middleware
 app.use((error, req, res, next) => {
-    console.error('Server error:', error.message);
+    console.error("Server error:", error.message);
     res.status(500).json({
         success: false,
-        error: 'Internal server error'
+        error: "Internal server error",
     });
 });
 
